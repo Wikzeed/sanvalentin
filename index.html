@@ -49,6 +49,8 @@ img{width:250px;border-radius:15px;margin-bottom:15px;}
 display:flex;
 justify-content:center;
 gap:20px;
+position:relative;
+height:60px;
 }
 
 button{
@@ -60,7 +62,13 @@ cursor:pointer;
 }
 
 #yes{background:#2ecc71;color:white;}
-#no{background:#e74c3c;color:white;position:absolute;}
+#no{
+background:#e74c3c;
+color:white;
+position:absolute;
+left:120px;
+top:0px;
+}
 </style>
 </head>
 <body>
@@ -103,8 +111,8 @@ document.body.innerHTML = `
 
 function moveNo(){
 const btn=document.getElementById("no");
-btn.style.top=Math.random()*80+"%";
-btn.style.left=Math.random()*80+"%";
+btn.style.left = Math.random()*200 + "px";
+btn.style.top = Math.random()*40 + "px";
 }
 </script>
 
