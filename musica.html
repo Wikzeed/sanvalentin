@@ -95,12 +95,13 @@ cursor:pointer;
 </head>
 <body>
 
+<!-- AUDIO REAL -->
 <audio id="music" loop>
   <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9b6a0c9a0a.mp3?filename=romantic-piano-ambient-11017.mp3" type="audio/mpeg">
 </audio>
 
 <div id="start">
-  <button id="startBtn" onclick="start()">💛 Toca aquí Yayita 💛</button>
+  <button id="startBtn" onclick="startExperience()">💛 Toca aquí Yayita 💛</button>
 </div>
 
 <div class="card" id="card">
@@ -127,10 +128,13 @@ heart.style.fontSize=(16+Math.random()*24)+"px";
 document.body.appendChild(heart);
 }
 
-function start(){
-document.getElementById("music").play();
+function startExperience(){
+const audio = document.getElementById("music");
+audio.volume = 0.5;
+audio.play().then(()=>{
 document.getElementById("start").style.display="none";
 document.getElementById("card").style.display="block";
+});
 }
 
 function yes(){
